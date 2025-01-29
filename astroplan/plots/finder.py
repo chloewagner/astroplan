@@ -84,12 +84,12 @@ def plot_finder_image(target, survey='DSS', fov_radius=10*u.arcmin,
     target_name = None if isinstance(target, SkyCoord) else target.name
 
     hdu = SkyView.get_images(position=position, coordinates=coordinates,
-                             survey=survey, radius=fov_radius, grid=grid)[0][0]
+                             survey=survey, radius=fov_radius)[0][0]
     wcs = WCS(hdu.header)
 
     # Set up axes & plot styles if needed.
     if ax is None:
-        ax = plt.gcf().add_subplot(projection=wcs)
+        ax=plt.subplot(projection=wcs)
     if style_kwargs is None:
         style_kwargs = {}
     style_kwargs = dict(style_kwargs)
