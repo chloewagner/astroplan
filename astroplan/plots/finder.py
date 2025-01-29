@@ -89,7 +89,7 @@ def plot_finder_image(target, survey='DSS', fov_radius=10*u.arcmin,
 
     # Set up axes & plot styles if needed.
     if ax is None:
-        ax = plt.gcf().add_subplot(projection=wcs)
+        ax=plt.subplot(projection=wcs)
     if style_kwargs is None:
         style_kwargs = {}
     style_kwargs = dict(style_kwargs)
